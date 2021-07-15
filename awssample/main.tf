@@ -31,6 +31,14 @@ resource "aws_instance" "machine2" {
     }
 }
 
+resource "aws_instance" "machine3" {
+    ami           = "ami-0a63cd87767e10ed4"
+    instance_type = "t2.micro"
+    availability_zone = "us-west-1c"
+    tags = {
+      "type" = var.myTag
+    }
+}
 
 #resource "aws_network_interface_sg_attachment" "sg_attachment1" {
 #  security_group_id    = "sg-8e01a2fb"
